@@ -7,7 +7,7 @@ RQ1 (Feasibility of ZSP): Can Zero Standing Privilege (ZSP) be consistently enfo
 RQ2 (Adaptive Access): How well can a Zero Trust system use information about who the user is, how secure their device is, and whether they’re making a temporary access request, to make sure privileged users only get the minimum access they need, only when it’s safe?
 RQ3 (Governance & Auditability): Can centralized session monitoring and tamper-proof logs support regulatory compliance and cybersecurity governance in hybrid clouds?
 # Methodology
-Step 1 – Environment Setup & Inventory
+#Step 1 – Environment Setup & Inventory
 Deploy a simulated hybrid environment using Docker containers for on-premises databases and cloud resource simulation.
 Inventory all privileged accounts and define the protected surface.
 Tools: Docker, AWS CLI, Azure CLI
