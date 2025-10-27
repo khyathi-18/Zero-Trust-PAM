@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "Zero Trust PAM API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"alice\",\n  \"password\": \"Password1!\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5001/login",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5001",
+          "path": ["login"]
+        }
+      }
+    },
+    {
+      "name": "Protected",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{jwt_token}}" }],
+        "url": {
+          "raw": "http://127.0.0.1:5001/protected",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5001",
+          "path": ["protected"]
+        }
+      }
+    },
+    {
+      "name": "Perform Action",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{jwt_token}}" }],
+        "url": {
+          "raw": "http://127.0.0.1:5001/action/read_all",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5001",
+          "path": ["action", "read_all"]
+        }
+      }
+    },
+    {
+      "name": "Vault Access",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{jwt_token}}" }],
+        "url": {
+          "raw": "http://127.0.0.1:5001/vault/db_password",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "5001",
+          "path": ["vault", "db_password"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "jwt_token", "value": "" }
+  ]
+}
